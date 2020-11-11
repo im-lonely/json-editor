@@ -1,0 +1,49 @@
+.viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  z-index: 0;
+  cursor: grab;
+  padding-bottom: 350px;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.grabbing {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.screen {
+  min-width: 200vw;
+  min-height: 200vh;
+  position: relative;
+  user-select: none;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #bbb 1px, transparent 1px),
+    linear-gradient(to bottom, #bbb 1px, transparent 1px);
+}
+
+.screen * {
+  pointer-events: none;
+}
+
+@media (min-width: 1500px) {
+  .viewport {
+    padding-left: 500px;
+    padding-bottom: 0;
+  }
+
+  .screen {
+    min-width: calc(200vw - 500px);
+  }
+}

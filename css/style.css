@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Quicksand:wght@300;400&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  --ff-primary: "Quicksand", sans-serif;
+  --ff-mono: "Fira Code", monospace;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.4rem;
+  --fs-h3: 1.95rem;
+  --fs-h4: 1.5rem;
+  --fs-body: 1.35rem;
+
+  --bg: #fefefe;
+
+  --clr-black: #1e1e1e;
+  --clr-dark: #212121;
+  --clr-light: #f8f8f8;
+  --clr-accent: #ff8866;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+@media (min-width: 600px) {
+  html {
+    --fs-h1: 3.1rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 2.1rem;
+    --fs-h4: 1.65rem;
+    --fs-body: 1.4rem;
+  }
+}
+
+@media (min-width: 800px) {
+  html {
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.8rem;
+    --fs-h3: 2.3rem;
+    --fs-h4: 1.75rem;
+    --fs-body: 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  html {
+    --fs-h1: 3.65rem;
+    --fs-h2: 2.9rem;
+    --fs-h3: 2.4rem;
+    --fs-h4: 1.85rem;
+    --fs-body: 1.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    --fs-h1: 4.25rem;
+    --fs-h2: 3.5rem;
+    --fs-h3: 2.45rem;
+    --fs-h4: 2rem;
+    --fs-body: 1.65rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  html {
+    --fs-h1: 4.9rem;
+    --fs-h2: 3.65rem;
+    --fs-h3: 2.55rem;
+    --fs-h4: 2.15rem;
+    --fs-body: 1.7rem;
+  }
+}
+
+@media (min-width: 1750px) {
+  html {
+    --fs-h1: 5.25rem;
+    --fs-h2: 3.9rem;
+    --fs-h3: 2.75rem;
+    --fs-h4: 2.25rem;
+    --fs-body: 1.75rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    --fs-h1: 5.9rem;
+    --fs-h2: 4.1rem;
+    --fs-h3: 2.95rem;
+    --fs-h4: 2.35rem;
+    --fs-body: 1.85rem;
+  }
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--ff-primary);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}

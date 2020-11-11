@@ -1,0 +1,42 @@
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  height: 350px;
+  width: 100vw;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.input-title {
+  color: var(--clr-accent);
+  font-weight: 300;
+  margin: 0 16px;
+  padding: 8px 0;
+}
+
+.input {
+  color: #111;
+  background-color: rgb(250, 250, 250);
+  border-radius: 2px;
+  margin: 0 16px 16px;
+  padding: 8px;
+  font-family: var(--ff-mono);
+  min-height: 250px;
+  overflow: scroll;
+  flex: 1;
+  white-space: pre-wrap;
+  tab-size: 4;
+}
+
+@media (min-width: 1500px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 500px;
+    background-color: #111;
+  }
+}
