@@ -1,7 +1,7 @@
 import { input } from "./main.js";
 
 export default function init() {
-  window.addEventListener("keydown", function (e) {
+  input.addEventListener("keydown", function (e) {
     if (e.key === "Tab") {
       e.preventDefault();
       insert("\t");

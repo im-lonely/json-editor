@@ -11,7 +11,7 @@
   scrollbar-width: none;
   z-index: 0;
   cursor: grab;
-  padding-bottom: 350px;
+  padding-bottom: 400px;
 }
 
 .viewport::-webkit-scrollbar {
@@ -24,17 +24,29 @@
 }
 
 .screen {
-  min-width: 200vw;
-  min-height: 200vh;
+  min-width: 100vw;
+  min-height: 100vh;
   position: relative;
   user-select: none;
   background-size: 40px 40px;
-  background-image: linear-gradient(to right, #bbb 1px, transparent 1px),
-    linear-gradient(to bottom, #bbb 1px, transparent 1px);
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px),
+    linear-gradient(to bottom, #ccc 1px, transparent 1px);
 }
 
 .screen * {
   pointer-events: none;
+  font-size: 24px;
+  padding: 4px 0;
+  line-height: 1.5;
+}
+
+.screen > div {
+  padding: 32px;
+}
+
+.screen > div,
+.screen > div > div {
+  margin-left: 0 !important;
 }
 
 @media (min-width: 1500px) {
@@ -44,6 +56,6 @@
   }
 
   .screen {
-    min-width: calc(200vw - 500px);
+    min-width: calc(100vw - 500px);
   }
 }

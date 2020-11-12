@@ -4,8 +4,14 @@ export default class Text {
 
     const span = document.createElement("span");
     span.innerText =
-      typeof text === "string" ? `"${text}"` : text === null ? "null" : text;
+      text === null
+        ? "null"
+        : typeof text === "object" && !Object.keys(text).length
+        ? ""
+        : JSON.stringify(text);
 
     this.element.appendChild(span);
+
+    this.element.style.marginLeft = 64;
   }
 }

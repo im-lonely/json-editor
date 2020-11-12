@@ -1,9 +1,18 @@
 import render from "./render.js";
 import * as editor from "./editor.js";
 import * as viewport from "./viewport.js";
+import { format, save } from "./utils.js";
+
+let retrievedJSON;
+
+try {
+  retrievedJSON = JSON.parse(localStorage.getItem("json-visualizer"));
+} catch (error) {
+  retrievedJSON = {};
+}
 
 const jsonRef = {
-  current: JSON.parse(localStorage.getItem("json-visualizer")) || {},
+  current: retrievedJSON,
 };
 
 export const input = document.getElementById("input");
@@ -31,16 +40,8 @@ if (!(typeof Storage === "undefined")) {
   if (!localStorage.getItem("json-visualizer")) {
     localStorage.setItem("json-visualizer", "");
   } else {
-    input.textContent = localStorage.getItem("json-visualizer");
+    input.textContent = format(localStorage.getItem("json-visualizer"));
   }
-}
-
-function save(element) {
-  const noTab = element.textContent.replace(/\t/g, " ");
-  const noStartOrTrailSpace = noTab.slice(1, noTab.length - 1).trim();
-  const wrapToObject = `{${noStartOrTrailSpace}}`;
-
-  localStorage.setItem("json-visualizer", wrapToObject);
 }
 
 editor.default();
