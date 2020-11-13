@@ -39,8 +39,9 @@
   min-height: 250px;
   overflow: scroll;
   flex: 1;
-  white-space: pre-wrap;
   tab-size: 4;
+  font-size: 18px;
+  resize: none;
 }
 
 @media (min-width: 1500px) {

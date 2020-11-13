@@ -35,5 +35,8 @@ export function parseValue(value) {
 }
 
 export function save(element) {
-  localStorage.setItem("json-visualizer", element.textContent);
+  localStorage.setItem(
+    "json-visualizer",
+    element.textContent.replace(/\t/g, "    ")
+  );
 }
