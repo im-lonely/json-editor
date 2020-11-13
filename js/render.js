@@ -50,6 +50,10 @@ function traverse(object) {
     root.append(jsonKey);
   }
 
+  Array.from(root.element.children).forEach((element) => {
+    element.style.marginLeft = 0;
+  });
+
   root.element.classList.add("object");
 
   return root;
@@ -88,11 +92,10 @@ function list(array) {
 window.addEventListener("resize", resize);
 
 function resize() {
-  if (innerWidth < 1500) {
-    screen.style.minWidth = `calc(100vw + ${globalDepth * 64 - 32}px)`;
-    screen.style.minHeight = `calc(100vh + ${globalSize * 24}px - 400px)`;
-  } else {
-    screen.style.minWidth = `calc(100vw + ${globalDepth * 64 - 32}px - 500px)`;
-    screen.style.minHeight = `calc(100vh + ${globalSize * 24}px)`;
-  }
+  screen.style.minWidth = `calc(100vw + ${
+    globalDepth * 64 - 32 > innerWidth ? globalDepth * 64 - 32 : 0
+  }px - ${innerWidth < 1500 ? 0 : 500}px)`;
+  screen.style.minHeight = `calc(100vh + ${
+    globalSize * 24 > innerHeight ? globalSize * 24 : 0
+  }px - ${innerWidth < 1500 ? 400 : 0}px)`;
 }

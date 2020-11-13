@@ -1,7 +1,7 @@
 import render from "./render.js";
 import * as editor from "./editor.js";
 import * as viewport from "./viewport.js";
-import { format, save } from "./utils.js";
+import { save } from "./utils.js";
 
 let retrievedJSON;
 
@@ -20,11 +20,15 @@ const message = document.getElementById("message");
 
 input.focus();
 
+input.textContent = "\n";
+
 input.addEventListener("input", function (e) {
-  save(this);
+  save(input);
+
+  if (!this.textContent) input.textContent = "\n";
 
   try {
-    const json = JSON.parse(this.textContent);
+    const json = JSON.parse(input.textContent);
 
     jsonRef.current = json;
 
@@ -32,7 +36,7 @@ input.addEventListener("input", function (e) {
 
     message.textContent = "";
   } catch (e) {
-    message.textContent = this.textContent ? "invalid" : "";
+    message.textContent = input.textContent ? "invalid" : "";
   }
 });
 
@@ -40,7 +44,7 @@ if (!(typeof Storage === "undefined")) {
   if (!localStorage.getItem("json-visualizer")) {
     localStorage.setItem("json-visualizer", "");
   } else {
-    input.textContent = format(localStorage.getItem("json-visualizer"));
+    input.textContent = localStorage.getItem("json-visualizer");
   }
 }
 

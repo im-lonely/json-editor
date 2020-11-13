@@ -35,14 +35,5 @@ export function parseValue(value) {
 }
 
 export function save(element) {
-  console.log(element.textContent);
-
   localStorage.setItem("json-visualizer", element.textContent);
-}
-
-export function format(json) {
-  return json
-    .split("")
-    .map((char) => char)
-    .join("");
 }

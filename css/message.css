@@ -6,4 +6,5 @@
   padding: 8px 16px;
   color: var(--clr-accent);
   font-weight: 300;
+  z-index: 10;
 }
